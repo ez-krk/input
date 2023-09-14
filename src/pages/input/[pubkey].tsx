@@ -37,7 +37,7 @@ const Input: NextPage<Props> = ({ pubkey }) => {
   });
   return (
     <Layout>
-      <h1>{pubkey}</h1>
+      <h1 className="z-[999]">{pubkey}</h1>
     </Layout>
   );
 };

@@ -1,16 +1,18 @@
-import { getAllPosts } from "../../tools/posts";
-import Layout from "src/layout";
-import type { NextPage, GetServerSideProps } from "next";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/router";
+
+import Layout from "../../layout";
 
 import type { QuestionPDA } from "../../types";
 import { AccountInfo, Connection, PublicKey } from "@solana/web3.js";
 import { PROGRAM_ID, SOLANA_RPC_ENDPOINT } from "src/constants";
 import { Address, BN, Program } from "@coral-xyz/anchor";
-import { IDL } from "src/programs/form";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { IDL } from "../../programs/form";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
-import { ellipsis } from "src/tools/core/ellipsis";
-import Spinner from "src/components/spinner/spinner.component";
+import { ellipsis } from "../../tools/core/ellipsis";
+import Spinner from "../../components/spinner/spinner.component";
+
+import type { NextPage, GetServerSideProps } from "next";
 
 // component render function
 const Input: NextPage = () => {
@@ -31,6 +33,8 @@ const Input: NextPage = () => {
     () => new Program(IDL, PROGRAM_ID as Address, connection),
     [connection]
   );
+
+  const router = useRouter();
 
   useEffect(() => {
     if (!inputs && pdas) {
@@ -77,10 +81,12 @@ const Input: NextPage = () => {
     }
   }, [cnx, inputs, pdas]);
 
+  const onClick = () => {};
+
   return (
     <Layout>
       {!loading && inputs.length > 0 ? (
-        <div className="mt-[67.5px] flex flex-col justify-center items-center z-[999]">
+        <div className="mt-[67.5px] flex flex-col justify-center items-center z-[750] w-full">
           <h1 className="my-8">input</h1>
           <div className="grid grid-cols-2 gap-4">
             {pdas.map((p, i) => {
@@ -89,7 +95,8 @@ const Input: NextPage = () => {
                   <div className="card w-96 glass mx-auto">
                     <div className="card-body">
                       <h2 className="card-title bg-black p-4 rounded-md">
-                        {ellipsis(p.pubkey.toBase58())}
+                        {/* {ellipsis(p.pubkey.toBase58())} */}
+                        {p.pubkey.toBase58()}
                       </h2>
                       {inputs[i].questions.map((question) => (
                         <p
@@ -103,7 +110,14 @@ const Input: NextPage = () => {
                       <div className="stats shadow bg-black">
                         <div className="stat">
                           <div className="stat-figure text-primary">
-                            <button className="btn btn-primary lowercase">
+                            <button
+                              className="btn btn-primary lowercase"
+                              onClick={() => {
+                                router.push({
+                                  pathname: `/input/${p.pubkey.toBase58()}`,
+                                });
+                              }}
+                            >
                               input
                             </button>
 
