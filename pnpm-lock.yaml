@@ -21,8 +21,8 @@ dependencies:
     specifier: ^0.19.1
     version: 0.19.1
   '@metaplex-foundation/mpl-candy-machine':
-    specifier: 6.0.0-alpha.16
-    version: 6.0.0-alpha.16(@metaplex-foundation/umi@0.8.9)
+    specifier: 6.0.0
+    version: 6.0.0(@metaplex-foundation/umi@0.8.9)
   '@metaplex-foundation/mpl-token-metadata':
     specifier: ^2.13.0
     version: 2.13.0
@@ -1788,7 +1788,7 @@ packages:
       async-retry: 1.3.3
       axios: 0.25.0(debug@4.3.4)
       base64url: 3.0.1
-      bignumber.js: 9.1.1
+      bignumber.js: 9.1.2
       bs58: 5.0.0
       commander: 8.3.0
       csv: 6.2.12
@@ -1819,7 +1819,7 @@ packages:
       async-retry: 1.3.3
       axios: 0.25.0(debug@4.3.4)
       base64url: 3.0.1
-      bignumber.js: 9.1.1
+      bignumber.js: 9.1.2
       bs58: 4.0.1
       commander: 8.3.0
       csv: 6.2.12
@@ -1849,24 +1849,6 @@ packages:
       - encoding
       - supports-color
       - utf-8-validate
-    dev: false
-
-  /@chainsafe/as-sha256@0.4.1:
-    resolution: {integrity: sha512-IqeeGwQihK6Y2EYLFofqs2eY2ep1I2MvQXHzOAI+5iQN51OZlUkrLgyAugu2x86xZewDk5xas7lNczkzFzF62w==}
-    dev: false
-
-  /@chainsafe/persistent-merkle-tree@0.6.1:
-    resolution: {integrity: sha512-gcENLemRR13+1MED2NeZBMA7FRS0xQPM7L2vhMqvKkjqtFT4YfjSVADq5U0iLuQLhFUJEMVuA8fbv5v+TN6O9A==}
-    dependencies:
-      '@chainsafe/as-sha256': 0.4.1
-      '@noble/hashes': 1.3.2
-    dev: false
-
-  /@chainsafe/ssz@0.11.1:
-    resolution: {integrity: sha512-cB8dBkgGN6ZoeOKuk+rIRHKN0L5i9JLGeC0Lui71QX0TuLcQKwgbfkUexpyJxnGFatWf8yeJxlOjozMn/OTP0g==}
-    dependencies:
-      '@chainsafe/as-sha256': 0.4.1
-      '@chainsafe/persistent-merkle-tree': 0.6.1
     dev: false
 
   /@coral-xyz/anchor@0.28.1-beta.2:
@@ -2090,16 +2072,6 @@ packages:
     resolution: {integrity: sha512-tqsQiBQDQdmPWE1xkkBq4rlSW5QZpLOUJ5RJh2/9fug+q9tnUhuZoVLk7s0scUIKTOzEtR72DFBXI4WiZcMpvw==}
     engines: {node: '>=14'}
     hasBin: true
-    dev: false
-
-  /@ethereumjs/util@8.0.6:
-    resolution: {integrity: sha512-zFLG/gXtF3QUC7iKFn4PT6HCr+DEnlCbwUGKGtXoqjA+64T+e0FuqMjlo4bQIY2ngRzk3EtudKdGYC4g31ehhg==}
-    engines: {node: '>=14'}
-    dependencies:
-      '@chainsafe/ssz': 0.11.1
-      '@ethereumjs/rlp': 4.0.1
-      ethereum-cryptography: 2.0.0
-      micro-ftch: 0.3.1
     dev: false
 
   /@ethereumjs/util@8.1.0:
@@ -3232,13 +3204,13 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@metaplex-foundation/mpl-candy-machine@6.0.0-alpha.16(@metaplex-foundation/umi@0.8.9):
-    resolution: {integrity: sha512-F5b1v5vQi5EmfMqHPc/vfFo4/L4n94Chtyzy3SZA/mplGZnqSBEW+tvxu5d0BKbymWdURocRe32cVLC192hQLQ==}
+  /@metaplex-foundation/mpl-candy-machine@6.0.0(@metaplex-foundation/umi@0.8.9):
+    resolution: {integrity: sha512-NOBTAAgQI3w//thrC8KBi31xr2mFbBKErFF3HipsZBA0kNXEjmXDjQ1npkVwsNSPhUDhmBYpZ1MHv8Fgq++RqA==}
     peerDependencies:
       '@metaplex-foundation/umi': ^0.8.2
     dependencies:
-      '@metaplex-foundation/mpl-token-metadata': 3.0.0-alpha.24(@metaplex-foundation/umi@0.8.9)
-      '@metaplex-foundation/mpl-toolbox': 0.8.1(@metaplex-foundation/umi@0.8.9)
+      '@metaplex-foundation/mpl-token-metadata': 3.0.0-alpha.27(@metaplex-foundation/umi@0.8.9)
+      '@metaplex-foundation/mpl-toolbox': 0.9.1(@metaplex-foundation/umi@0.8.9)
       '@metaplex-foundation/umi': 0.8.9
       '@noble/hashes': 1.3.2
       merkletreejs: 0.3.10
@@ -3261,17 +3233,25 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@metaplex-foundation/mpl-token-metadata@3.0.0-alpha.24(@metaplex-foundation/umi@0.8.9):
-    resolution: {integrity: sha512-1idZ+9yKGq58OaRQuAjJwPxtgEp62x2iWerMB0b5SRHvHHZc+vvjPX0jjPaiX2MjG1dq18Xua6FpSsIay3+Gjg==}
+  /@metaplex-foundation/mpl-token-metadata@3.0.0-alpha.27(@metaplex-foundation/umi@0.8.9):
+    resolution: {integrity: sha512-MSERz5HB2XZ/K+FOMh0tPeqcZZEpGVzdy7e+Cy3MHg7x52JtbGBDtWIoxBJn1OBZayCBfX9gytEoqrXe2YRGqQ==}
     peerDependencies:
       '@metaplex-foundation/umi': ^0.8.2
     dependencies:
-      '@metaplex-foundation/mpl-toolbox': 0.8.1(@metaplex-foundation/umi@0.8.9)
+      '@metaplex-foundation/mpl-toolbox': 0.9.1(@metaplex-foundation/umi@0.8.9)
       '@metaplex-foundation/umi': 0.8.9
     dev: false
 
   /@metaplex-foundation/mpl-toolbox@0.8.1(@metaplex-foundation/umi@0.8.9):
     resolution: {integrity: sha512-PYU+qU6hg+h6V42z+MDnBTiWZXTTzWhIn5ieyRZYyszTru/LiJKHdsHGKe1VBfuXEuRdfRhAzivMjquZVaqO4A==}
+    peerDependencies:
+      '@metaplex-foundation/umi': ^0.8.2
+    dependencies:
+      '@metaplex-foundation/umi': 0.8.9
+    dev: false
+
+  /@metaplex-foundation/mpl-toolbox@0.9.1(@metaplex-foundation/umi@0.8.9):
+    resolution: {integrity: sha512-Jm98H997MrDfKItjA8bxfsQa+ijVVR6YmMapSd0l75+nKo6Ca0eve/tv2z4qudMS2A4HbH6NLKSW3JHkutzvkQ==}
     peerDependencies:
       '@metaplex-foundation/umi': ^0.8.2
     dependencies:
@@ -3734,7 +3714,7 @@ packages:
     dependencies:
       '@apocentre/alias-sampling': 0.5.3
       assert: 2.0.0
-      bignumber.js: 9.1.1
+      bignumber.js: 9.1.2
       cbor-sync: 1.0.4
       crc: 3.8.0
       jsbi: 3.2.5
@@ -4879,20 +4859,8 @@ packages:
     resolution: {integrity: sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==}
     dev: true
 
-  /@scure/base@1.1.1:
-    resolution: {integrity: sha512-ZxOhsSyxYwLJj3pLZCefNitxsj093tb2vq90mp2txoYeBqbcjDjqFhyM8eUjq/uFm6zJ+mUuqxlS2FkuSY1MTA==}
-    dev: false
-
   /@scure/base@1.1.3:
     resolution: {integrity: sha512-/+SgoRjLq7Xlf0CWuLHq2LUZeL/w65kfzAPG5NH9pcmBhs+nunQTn4gvdwgMTIXnt9b2C/1SeL2XiysZEyIC9Q==}
-    dev: false
-
-  /@scure/bip32@1.3.0:
-    resolution: {integrity: sha512-bcKpo1oj54hGholplGLpqPHRbIsnbixFtc06nwuNM5/dwSXOq/AAYoIBRsBmnZJSdfeNW5rnff7NTAz3ZCqR9Q==}
-    dependencies:
-      '@noble/curves': 1.0.0
-      '@noble/hashes': 1.3.0
-      '@scure/base': 1.1.1
     dev: false
 
   /@scure/bip32@1.3.1:
@@ -4907,14 +4875,7 @@ packages:
     resolution: {integrity: sha512-pwrPOS16VeTKg98dYXQyIjJEcWfz7/1YJIwxUEPFfQPtc86Ym/1sVgQ2RLoD43AazMk2l/unK4ITySSpW2+82w==}
     dependencies:
       '@noble/hashes': 1.1.3
-      '@scure/base': 1.1.1
-    dev: false
-
-  /@scure/bip39@1.2.0:
-    resolution: {integrity: sha512-SX/uKq52cuxm4YFXWFaVByaSHJh2w3BnokVSeUJVCv6K7WulT9u2BuNRBhuFl8vAuYnzx9bEu9WgpcNYTrYieg==}
-    dependencies:
-      '@noble/hashes': 1.3.0
-      '@scure/base': 1.1.1
+      '@scure/base': 1.1.3
     dev: false
 
   /@scure/bip39@1.2.1:
@@ -5025,7 +4986,7 @@ packages:
       '@solana/buffer-layout': 4.0.1
       '@solana/web3.js': 1.75.0
       bigint-buffer: 1.1.5
-      bignumber.js: 9.1.1
+      bignumber.js: 9.1.2
     transitivePeerDependencies:
       - bufferutil
       - encoding
@@ -6022,12 +5983,12 @@ packages:
       '@babel/runtime': 7.x
     dependencies:
       '@babel/runtime': 7.22.11
-      '@ethereumjs/util': 8.0.6
+      '@ethereumjs/util': 8.1.0
       '@toruslabs/broadcast-channel': 6.3.1
       '@toruslabs/http-helpers': 3.4.0(@babel/runtime@7.22.11)
       '@toruslabs/openlogin-jrpc': 4.2.0(@babel/runtime@7.22.11)
       async-mutex: 0.4.0
-      bignumber.js: 9.1.1
+      bignumber.js: 9.1.2
       bowser: 2.11.0
       eth-rpc-errors: 4.0.3
       json-rpc-random-id: 1.0.1
@@ -6104,7 +6065,7 @@ packages:
       '@toruslabs/eccrypto': 2.2.1
       '@toruslabs/http-helpers': 3.4.0(@babel/runtime@7.21.5)
       elliptic: 6.5.4
-      ethereum-cryptography: 2.0.0
+      ethereum-cryptography: 2.1.2
       json-stable-stringify: 1.0.2
     transitivePeerDependencies:
       - '@sentry/types'
@@ -6348,12 +6309,6 @@ packages:
   /@types/parse-json@4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
 
-  /@types/pbkdf2@3.1.0:
-    resolution: {integrity: sha512-Cf63Rv7jCQ0LaL8tNXmEyqTHuIJxRdlS5vMh1mj5voN4+QFhVZnlZruezqpWYDiJ8UTzhP0VmeLXCmBk66YrMQ==}
-    dependencies:
-      '@types/node': 20.0.0
-    dev: false
-
   /@types/prop-types@15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
 
@@ -6400,12 +6355,6 @@ packages:
 
   /@types/scheduler@0.16.3:
     resolution: {integrity: sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==}
-
-  /@types/secp256k1@4.0.3:
-    resolution: {integrity: sha512-Da66lEIFeIz9ltsdMZcpQvmrmmoqrfju8pm1BH8WbYjZSwUgCwXLb9C+9XYogwBITnbsSaMdVPb2ekf7TV+03w==}
-    dependencies:
-      '@types/node': 20.0.0
-    dev: false
 
   /@types/stack-utils@2.0.1:
     resolution: {integrity: sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==}
@@ -7124,7 +7073,7 @@ packages:
       asn1.js: 5.4.1
       axios: 0.27.2(debug@4.3.4)
       base64-js: 1.5.1
-      bignumber.js: 9.1.1
+      bignumber.js: 9.1.2
       util: 0.12.5
     transitivePeerDependencies:
       - debug
@@ -7137,7 +7086,7 @@ packages:
       arconnect: 0.4.2
       asn1.js: 5.4.1
       base64-js: 1.5.1
-      bignumber.js: 9.1.1
+      bignumber.js: 9.1.2
     dev: false
 
   /asap@2.0.6:
@@ -7147,7 +7096,7 @@ packages:
   /asn1.js@5.4.1:
     resolution: {integrity: sha512-+I//4cYPccV8LdmBLiX8CYvf9Sp3vQsrqu2QNXRcrbiWvcx/UdlFiqUJJzxRQxgsZmvhXhn4cSKeSmoFjVdupA==}
     dependencies:
-      bn.js: 4.11.6
+      bn.js: 4.12.0
       inherits: 2.0.4
       minimalistic-assert: 1.0.1
       safer-buffer: 2.1.2
@@ -7480,10 +7429,6 @@ packages:
       buffer: 5.7.1
       inherits: 2.0.4
       readable-stream: 3.6.2
-    dev: false
-
-  /blakejs@1.2.1:
-    resolution: {integrity: sha512-QXUSXI3QVc/gJME0dBpXrag1kbzOqCjCX8/b54ntNyW6sjtoqxqRk3LTmXzaJoh71zMsDCjM+47jS7XiwN/+fQ==}
     dev: false
 
   /bluebird@3.7.2:
@@ -9278,35 +9223,6 @@ packages:
       js-sha3: 0.8.0
     dev: false
 
-  /ethereum-cryptography@0.1.3:
-    resolution: {integrity: sha512-w8/4x1SGGzc+tO97TASLja6SLd3fRIK2tLVcV2Gx4IB21hE19atll5Cq9o3d0ZmAYC/8aw0ipieTSiekAea4SQ==}
-    dependencies:
-      '@types/pbkdf2': 3.1.0
-      '@types/secp256k1': 4.0.3
-      blakejs: 1.2.1
-      browserify-aes: 1.2.0
-      bs58check: 2.1.2
-      create-hash: 1.2.0
-      create-hmac: 1.1.7
-      hash.js: 1.1.7
-      keccak: 3.0.3
-      pbkdf2: 3.1.2
-      randombytes: 2.1.0
-      safe-buffer: 5.2.1
-      scrypt-js: 3.0.1
-      secp256k1: 4.0.3
-      setimmediate: 1.0.5
-    dev: false
-
-  /ethereum-cryptography@2.0.0:
-    resolution: {integrity: sha512-g25m4EtfQGjstWgVE1aIz7XYYjf3kH5kG17ULWVB5dH6uLahsoltOhACzSxyDV+fhn4gbR4xRrOXGe6r2uh4Bg==}
-    dependencies:
-      '@noble/curves': 1.0.0
-      '@noble/hashes': 1.3.0
-      '@scure/bip32': 1.3.0
-      '@scure/bip39': 1.2.0
-    dev: false
-
   /ethereum-cryptography@2.1.2:
     resolution: {integrity: sha512-Z5Ba0T0ImZ8fqXrJbpHcbpAvIswRte2wGNR/KePnu8GbbvgJ47lMxT/ZZPG6i9Jaht4azPDop4HaM00J0J59ug==}
     dependencies:
@@ -9314,17 +9230,6 @@ packages:
       '@noble/hashes': 1.3.1
       '@scure/bip32': 1.3.1
       '@scure/bip39': 1.2.1
-    dev: false
-
-  /ethereumjs-util@7.1.5:
-    resolution: {integrity: sha512-SDl5kKrQAudFBUe5OJM9Ac6WmMyYmXX/6sTmLZ3ffG2eY6ZIGBes3pEDxNN6V72WyOw4CPD5RomKdsa8DAAwLg==}
-    engines: {node: '>=10.0.0'}
-    dependencies:
-      '@types/bn.js': 5.1.1
-      bn.js: 5.2.1
-      create-hash: 1.2.0
-      ethereum-cryptography: 0.1.3
-      rlp: 2.2.7
     dev: false
 
   /ethers@5.7.2:
@@ -10764,7 +10669,7 @@ packages:
   /json-bigint@1.0.0:
     resolution: {integrity: sha512-SiPv/8VpZuWbvLSMtTDU8hEfrZWg/mH/nV/b4o0CYbSxu1UIQPLdwKOCIyLQX+VIPO5vrLX3i8qtqFyhdPSUSQ==}
     dependencies:
-      bignumber.js: 9.1.1
+      bignumber.js: 9.1.2
     dev: false
 
   /json-buffer@3.0.1:
@@ -11262,11 +11167,11 @@ packages:
     resolution: {integrity: sha512-TostQBiwYRIwSE5++jGmacu3ODcKAgqb0Y/pnIohXS7sWxh1gCkSptbmF1a43faehRDpcHf7J/kv0Ml2D/zblQ==}
     engines: {node: '>= 7.6.0'}
     dependencies:
-      bignumber.js: 9.1.1
+      bignumber.js: 9.1.2
       buffer-reverse: 1.0.1
       crypto-js: 3.3.0
       treeify: 1.1.0
-      web3-utils: 1.9.0
+      web3-utils: 1.10.2
     dev: false
 
   /merkletreejs@0.3.10:
@@ -13466,13 +13371,6 @@ packages:
       inherits: 2.0.4
     dev: false
 
-  /rlp@2.2.7:
-    resolution: {integrity: sha512-d5gdPmgQ0Z+AklL2NVXr/IoSjNZFfTVvQWzL/AM2AOcSzYP2xjlb0AC8YyCLc41MSNf6P6QVtjgPdmVtzb+4lQ==}
-    hasBin: true
-    dependencies:
-      bn.js: 5.2.1
-    dev: false
-
   /rpc-websockets@7.5.1:
     resolution: {integrity: sha512-kGFkeTsmd37pHPMaHIgN1LVKXMi0JD782v4Ds9ZKtLlwdTKjn+CxM9A9/gLT2LaOuEcEFGL98h1QWQtlOIdW0w==}
     dependencies:
@@ -13692,10 +13590,6 @@ packages:
 
   /set-blocking@2.0.0:
     resolution: {integrity: sha512-KiKBS8AnWGEyLzofFfmvKwpdPzqiy16LvQfK3yv/fVH7Bj13/wl3JSR1J+rfgRE9q7xUJK4qvgS8raSOeLUehw==}
-    dev: false
-
-  /setimmediate@1.0.5:
-    resolution: {integrity: sha512-MATJdZp8sLqDl/68LfQmbP8zKPLQNV6BIZoIgrscFDQ+RsvK/BxeDQOgyxKKoh0y/8h3BqVFnCqQ/gd+reiIXA==}
     dev: false
 
   /setprototypeof@1.2.0:
@@ -14765,19 +14659,6 @@ packages:
       bn.js: 5.2.1
       ethereum-bloom-filters: 1.0.10
       ethereum-cryptography: 2.1.2
-      ethjs-unit: 0.1.6
-      number-to-bn: 1.7.0
-      randombytes: 2.1.0
-      utf8: 3.0.0
-    dev: false
-
-  /web3-utils@1.9.0:
-    resolution: {integrity: sha512-p++69rCNNfu2jM9n5+VD/g26l+qkEOQ1m6cfRQCbH8ZRrtquTmrirJMgTmyOoax5a5XRYOuws14aypCOs51pdQ==}
-    engines: {node: '>=8.0.0'}
-    dependencies:
-      bn.js: 5.2.1
-      ethereum-bloom-filters: 1.0.10
-      ethereumjs-util: 7.1.5
       ethjs-unit: 0.1.6
       number-to-bn: 1.7.0
       randombytes: 2.1.0
