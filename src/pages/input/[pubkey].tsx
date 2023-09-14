@@ -3,11 +3,13 @@ import { GetStaticProps, GetStaticPaths, GetServerSideProps } from "next";
 import { ParsedUrlQuery } from "querystring";
 import { PROGRAM_ID, SOLANA_RPC_ENDPOINT } from "../../constants";
 import { Address, Program } from "@coral-xyz/anchor";
-import { useState, type FC, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Layout from "src/layout";
 import { IDL } from "src/programs/form";
 import { useConnection } from "@solana/wallet-adapter-react";
 import { QuestionPDA } from "src/types";
+
+import { NextPage } from "next";
 
 interface Iparams extends ParsedUrlQuery {
   pubkey: string;
@@ -17,7 +19,7 @@ type Props = {
   pubkey: string;
 };
 
-export const Input: FC<Props> = ({ pubkey }) => {
+const Input: NextPage<Props> = ({ pubkey }) => {
   const connection = useConnection();
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<QuestionPDA>();
@@ -68,3 +70,5 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 //     fallback: false,
 //   };
 // };
+
+export default Input;
