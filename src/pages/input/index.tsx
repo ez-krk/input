@@ -80,7 +80,7 @@ const Input: NextPage = () => {
   return (
     <Layout>
       {!loading && inputs.length > 0 ? (
-        <div className="mt-[67.5px] flex flex-col justify-center items-center">
+        <div className="mt-[67.5px] flex flex-col justify-center items-center z-[999]">
           <h1 className="my-8">input</h1>
           <div className="grid grid-cols-2 gap-4">
             {pdas.map((p, i) => {

@@ -33,30 +33,20 @@ export const NavBar: FC<Props> = ({ wallet, router }) => (
     </div>
 
     {/* Nav Links */}
-    {/* <div className="hidden md:inline md:navbar-center z-[999]">
+    <div className="hidden md:inline md:navbar-center z-[999]">
       <div className="flex items-stretch z-[999]">
         <Link href="/">
           <span className="btn btn-sm btn-ghost rounded-btn lowercase">
             home
           </span>
         </Link>
-        <Link href="/roadmap">
+        <Link href="/input">
           <span className="btn btn-sm btn-ghost rounded-btn lowercase">
-            roadmap
-          </span>
-        </Link>
-        <Link href="/pricing">
-          <span className="btn btn-sm btn-ghost rounded-btn lowercase">
-            pricing
-          </span>
-        </Link>
-        <Link href="/docs">
-          <span className="btn btn-sm btn-ghost rounded-btn lowercase">
-            docs
+            input
           </span>
         </Link>
       </div>
-    </div> */}
+    </div>
 
     {/* Wallet & Settings */}
     <div className="navbar-end">
