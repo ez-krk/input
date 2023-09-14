@@ -1,7 +1,7 @@
 // react
 import React, { FC, useEffect, useState } from "react";
 
-const HeroView: FC = () => {
+export const Matrix: FC = () => {
   const [canvasUrl, setCanvasUrl] = useState(null);
   const ref = React.useRef(null);
   useEffect(() => {
@@ -54,5 +54,3 @@ const HeroView: FC = () => {
     </>
   );
 };
-
-export default HeroView;

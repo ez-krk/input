@@ -21,6 +21,7 @@ require("../styles/scrollbar.scss");
 
 import type { AppProps } from "next/app";
 import { Toaster } from "react-hot-toast";
+import { Matrix } from "src/components/matrix/matrix.component";
 
 const pixel = localFont({ src: "../assets/fonts/pixel.ttf" });
 
@@ -51,6 +52,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           <ContentContainer>
             <div className={pixel.className}>
               <Component {...pageProps} />
+              <Matrix />
             </div>
           </ContentContainer>
         </HolderProvider>

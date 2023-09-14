@@ -55,9 +55,9 @@ export const InputView: FC = () => {
   }, [questions]);
 
   return (
-    <div className="w-full flex flex-col justify-center items-center">
+    <div className="w-full flex flex-col justify-center items-center z-[999]">
       {publicKey ? (
-        <div className="border border-primary rounded-md w-full md:max-w-[420px] flex flex-col items-center pb-8">
+        <div className="border border-primary rounded-md w-full md:max-w-[420px] flex flex-col items-center pb-8 bg-black">
           <h1 className="leading-relaxed text-xl font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195] mt-8">
             <span className="">new entry</span>
           </h1>

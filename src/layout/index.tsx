@@ -4,8 +4,6 @@ import { useRouter } from "next/router";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { NavBar } from "../components/navbar/navbar.component";
 
-import Link from "next/link";
-
 const Layout = ({ children }: { children: ReactNode }) => {
   //   const { publicKey } = useWallet();
   const wallet = useWallet();
