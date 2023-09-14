@@ -17,9 +17,7 @@ export const HomeView: FC = () => {
       </h1>
       <div className="text-lg text-white mb-3 leading-relaxed z-[750] ">
         <span className="mx-2 font-bold text-xl">
-          <span className={pixel.className}>
-            whitelist & fundraising management platform.
-          </span>
+          <span className={pixel.className}>100% on-chain forms</span>
         </span>
       </div>
     </div>
