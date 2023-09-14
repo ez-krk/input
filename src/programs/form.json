@@ -1,0 +1,159 @@
+{
+  "version": "0.1.0",
+  "name": "form",
+  "instructions": [
+    {
+      "name": "newQuestions",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "questions",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "input",
+          "type": {
+            "vec": "string"
+          }
+        },
+        {
+          "name": "seed",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "newAnswers",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "questions",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "answers",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "input",
+          "type": {
+            "vec": "string"
+          }
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Answers",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "publicKey"
+          },
+          {
+            "name": "questions",
+            "type": "publicKey"
+          },
+          {
+            "name": "answers",
+            "type": {
+              "vec": "string"
+            }
+          },
+          {
+            "name": "createdAt",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Questions",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "publicKey"
+          },
+          {
+            "name": "questions",
+            "type": {
+              "vec": "string"
+            }
+          },
+          {
+            "name": "participants",
+            "type": "u64"
+          },
+          {
+            "name": "createdAt",
+            "type": "i64"
+          },
+          {
+            "name": "seed",
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "QuestionEmpty",
+      "msg": "Question empty."
+    },
+    {
+      "code": 6001,
+      "name": "QuestionTooLong",
+      "msg": "Question too long, 50 characters maximum."
+    },
+    {
+      "code": 6002,
+      "name": "AnswerTooLong",
+      "msg": "Answer too long, 280 characters maximum."
+    },
+    {
+      "code": 6003,
+      "name": "AnswerEmpty",
+      "msg": "Answer empty."
+    }
+  ]
+}
