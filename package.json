@@ -13,7 +13,7 @@
     "@coral-xyz/anchor": "0.28.1-beta.2",
     "@gumhq/react-sdk": "^3.0.1",
     "@gumhq/ui-components": "^2.0.4",
-    "@heroicons/react": "^2.0.17",
+    "@heroicons/react": "^2.0.18",
     "@metaplex-foundation/js": "^0.19.1",
     "@metaplex-foundation/mpl-candy-machine": "6.0.0-alpha.16",
     "@metaplex-foundation/mpl-token-metadata": "^2.13.0",
