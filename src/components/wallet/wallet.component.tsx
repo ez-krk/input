@@ -18,6 +18,7 @@ const Wallet = () => {
         maxHeight: "40px",
         marginRight: "10px",
         marginLeft: "15px",
+        zIndex: "999",
       }}
     />
   );

@@ -1,15 +1,19 @@
-import { Connection, PublicKey } from "@solana/web3.js";
+import { useState, useEffect } from "react";
 import { GetStaticProps, GetStaticPaths, GetServerSideProps } from "next";
+
+import { Connection, PublicKey } from "@solana/web3.js";
 import { ParsedUrlQuery } from "querystring";
 import { PROGRAM_ID, SOLANA_RPC_ENDPOINT } from "../../constants";
 import { Address, Program } from "@coral-xyz/anchor";
-import { useState, useEffect } from "react";
-import Layout from "src/layout";
-import { IDL } from "src/programs/form";
+import Layout from "../../layout";
+import { IDL } from "../../programs/form";
 import { useConnection } from "@solana/wallet-adapter-react";
-import { QuestionPDA } from "src/types";
+import { QuestionPDA } from "../../types";
 
-import { NextPage } from "next";
+import Spinner from "../../components/spinner/spinner.component";
+import { OutputView } from "../../views/output";
+
+import type { NextPage } from "next";
 
 interface Iparams extends ParsedUrlQuery {
   pubkey: string;
@@ -22,7 +26,8 @@ type Props = {
 const Input: NextPage<Props> = ({ pubkey }) => {
   const connection = useConnection();
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState<QuestionPDA>();
+  const [questions, setQuestions] = useState<QuestionPDA>();
+  const [answers, setAnswers] = useState<QuestionPDA>();
   const program = new Program(IDL, PROGRAM_ID as Address, connection);
 
   useEffect(() => {
@@ -32,12 +37,19 @@ const Input: NextPage<Props> = ({ pubkey }) => {
       return pda;
     };
     fetchPda()
-      .then((res) => setData(res))
+      .then((res) => setQuestions(res))
       .finally(() => setLoading(false));
   });
   return (
     <Layout>
-      <h1 className="z-[999]">{pubkey}</h1>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <>
+          <h1 className="z-[999]">{pubkey}</h1>
+          <OutputView />
+        </>
+      )}
     </Layout>
   );
 };
