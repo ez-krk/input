@@ -3,9 +3,6 @@ import { useMemo } from "react";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { PhantomWalletAdapter } from "@solana/wallet-adapter-wallets";
 import { clusterApiUrl } from "@solana/web3.js";
-// gum
-import GumSDKProvider from "src/components/GumSDKProvider";
-import { GumUIProvider } from "@gumhq/ui-components";
 // contexts
 import { HolderProvider } from "../contexts/holder.context";
 import { ContentContainer } from "../components/content-container/content-container.component";
@@ -46,17 +43,15 @@ const App = ({ Component, pageProps }: AppProps) => {
       wallets={wallets}
     >
       <Toaster />
-      <GumSDKProvider>
-        <HolderProvider>
-          <Notifications />
-          <ContentContainer>
-            <div className={pixel.className}>
-              <Component {...pageProps} />
-              <Matrix />
-            </div>
-          </ContentContainer>
-        </HolderProvider>
-      </GumSDKProvider>
+      <HolderProvider>
+        <Notifications />
+        <ContentContainer>
+          <div className={pixel.className}>
+            <Component {...pageProps} />
+            {/* <Matrix /> */}
+          </div>
+        </ContentContainer>
+      </HolderProvider>
     </WalletContextProvider>
   );
 };

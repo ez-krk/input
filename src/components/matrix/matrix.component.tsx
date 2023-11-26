@@ -6,7 +6,7 @@ export const Matrix: FC = () => {
   const ref = React.useRef(null);
   useEffect(() => {
     // The DOM element is accessible here.
-    console.log(ref.current);
+    // console.log(ref.current);
     const canvas = ref.current;
     const dataUrl = canvas.toDataURL();
     if (dataUrl) () => setCanvasUrl(dataUrl);
@@ -34,7 +34,7 @@ export const Matrix: FC = () => {
         ctx.fillText(txt, i * font, arr[i] * font);
         if (arr[i] * font > height && Math.random() > 0.975) {
           arr[i] = 0;
-          console.log(typeof arr);
+          // console.log(typeof arr);
         }
         arr[i]++;
       }

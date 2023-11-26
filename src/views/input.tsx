@@ -8,7 +8,7 @@ import { AiOutlineDelete, AiOutlinePlusCircle } from "react-icons/ai";
 import { Question } from "src/types";
 import { Transaction } from "@solana/web3.js";
 import toast from "react-hot-toast";
-import { SendTransaction } from "src/components/SendTransaction";
+import { SendForm } from "src/components/SendForm";
 import { Input } from "src/components/input/input.component";
 
 export const InputView: FC = () => {
@@ -59,7 +59,7 @@ export const InputView: FC = () => {
       {publicKey ? (
         <div className="border border-primary rounded-md w-full md:max-w-[420px] flex flex-col items-center pb-8 bg-black">
           <h1 className="leading-relaxed text-xl font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195] mt-8">
-            <span className="">new entry</span>
+            <span className="">create new form</span>
           </h1>
           <div className="w-full flex justify-center items-center mb-8">
             <div
@@ -67,7 +67,7 @@ export const InputView: FC = () => {
               data-tip="add question"
             >
               <AiOutlinePlusCircle
-                className="text-success w-6 h-6 mt-4"
+                className="text-success w-6 h-6 mt-4 cursor-pointer"
                 onClick={onClickAdd}
               />
             </div>
@@ -86,7 +86,7 @@ export const InputView: FC = () => {
               );
             })}
 
-          <SendTransaction strings={strings} />
+          <SendForm strings={strings} />
         </div>
       ) : (
         <Wallet />

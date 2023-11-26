@@ -7,24 +7,20 @@ import {
   AiOutlineCheck,
 } from "react-icons/ai";
 import { MdDone } from "react-icons/md";
-import type { Question } from "../../types";
+import type { Answer } from "../../types";
 
 import { toast } from "react-hot-toast";
 import type { SetStateAction } from "react";
 
 interface Props {
-  question: Question;
-  questions: Question[] | null;
-  setQuestions: React.Dispatch<SetStateAction<Question[] | null>>;
+  answer: Answer;
+  answers: Answer[] | null;
+  setAnswers: React.Dispatch<SetStateAction<Answer[] | null>>;
 }
 
-export const Output: React.FC<Props> = ({
-  question,
-  questions,
-  setQuestions,
-}) => {
+export const Output: React.FC<Props> = ({ answer, answers, setAnswers }) => {
   const [edit, setEdit] = useState<boolean>(false);
-  const [editName, setEditName] = useState<string>(question.question);
+  const [editName, setEditName] = useState<string>(answer.answer);
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -43,11 +39,11 @@ export const Output: React.FC<Props> = ({
   const handleEditNameSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!editName) {
-      toast.error("question is empty !");
+      toast.error("anwser is empty !");
     } else {
-      setQuestions(
-        questions!.map((item) =>
-          item.id === question.id ? { ...item, question: editName } : item
+      setAnswers(
+        answers!.map((item) =>
+          item.id === answer.id ? { ...item, question: editName } : item
         )
       );
     }
@@ -55,8 +51,7 @@ export const Output: React.FC<Props> = ({
   };
 
   const handleDelete = () => {
-    questions &&
-      setQuestions(questions.filter((item) => item.id !== question!.id));
+    answers && setAnswers(answers.filter((item) => item.id !== answer!.id));
   };
 
   return (
@@ -74,9 +69,7 @@ export const Output: React.FC<Props> = ({
           onChange={handleEditNameChange}
         />
       ) : (
-        <span className="w-[88%] font-bold">
-          {question.question || "what's on your mind ?"}
-        </span>
+        <span className="w-[88%] font-bold">{answer.answer}</span>
       )}
       <div className="flex justify-center items-center w-[12%] space-x-2 gap-1">
         <span className="flex cursor-pointer text-[25px]" onClick={handleEdit}>

@@ -26,7 +26,7 @@ type Props = {
 const Input: NextPage<Props> = ({ pubkey }) => {
   const connection = useConnection();
   const [loading, setLoading] = useState(true);
-  const [questions, setQuestions] = useState<QuestionPDA>();
+  const [pda, setPda] = useState<QuestionPDA>();
   const [answers, setAnswers] = useState<QuestionPDA>();
   const program = new Program(IDL, PROGRAM_ID as Address, connection);
 
@@ -37,7 +37,7 @@ const Input: NextPage<Props> = ({ pubkey }) => {
       return pda;
     };
     fetchPda()
-      .then((res) => setQuestions(res))
+      .then((res) => setPda(res))
       .finally(() => setLoading(false));
   });
   return (
@@ -47,7 +47,7 @@ const Input: NextPage<Props> = ({ pubkey }) => {
       ) : (
         <>
           <h1 className="z-[999]">{pubkey}</h1>
-          <OutputView />
+          <OutputView pda={pda} />
         </>
       )}
     </Layout>

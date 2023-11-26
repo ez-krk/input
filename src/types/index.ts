@@ -12,6 +12,11 @@ export type Question = {
   question: string;
 };
 
+export type Answer = {
+  id: number;
+  answer: string;
+};
+
 export type QuestionPDA = {
   owner: PublicKey;
   questions: string[];

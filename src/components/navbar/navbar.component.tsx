@@ -42,7 +42,7 @@ export const NavBar: FC<Props> = ({ wallet, router }) => (
         </Link>
         <Link href="/input">
           <span className="btn btn-sm btn-ghost rounded-btn lowercase">
-            input
+            all forms
           </span>
         </Link>
       </div>

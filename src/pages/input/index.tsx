@@ -94,8 +94,8 @@ const Input: NextPage = () => {
                 <div className="card w-96 glass mx-auto">
                   <div className="card-body">
                     <h2 className="card-title bg-black p-4 rounded-md">
-                      {/* {ellipsis(p.pubkey.toBase58())} */}
-                      {p.pubkey.toBase58()}
+                      {ellipsis(p.pubkey.toBase58())}
+                      {/* {p.pubkey.toBase58()} */}
                     </h2>
                     {inputs[i].questions.map((question) => (
                       <p

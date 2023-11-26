@@ -15,7 +15,7 @@ type Props = {
   strings: string[];
 };
 
-export const SendTransaction: FC<Props> = ({ strings }) => {
+export const SendReply: FC<Props> = ({ strings }) => {
   const connection = useConnection();
   const { publicKey, sendTransaction } = useWallet();
 
@@ -82,7 +82,7 @@ export const SendTransaction: FC<Props> = ({ strings }) => {
       // disabled={!publicKey}
     >
       <div className="hidden group-disabled:block ">Wallet not connected</div>
-      <span className="block group-disabled:hidden">Send Transaction</span>
+      <span className="block group-disabled:hidden">Send Output</span>
     </div>
   );
 };
