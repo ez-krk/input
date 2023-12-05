@@ -24,8 +24,8 @@ dependencies:
     specifier: ^2.13.0
     version: 2.13.0
   '@metaplex-foundation/mpl-toolbox':
-    specifier: ^0.8.1
-    version: 0.8.1(@metaplex-foundation/umi@0.8.9)
+    specifier: ^0.9.0
+    version: 0.9.1(@metaplex-foundation/umi@0.8.9)
   '@metaplex-foundation/umi':
     specifier: ^0.8.9
     version: 0.8.9
@@ -3020,6 +3020,14 @@ packages:
 
   /@metaplex-foundation/mpl-toolbox@0.8.1(@metaplex-foundation/umi@0.8.9):
     resolution: {integrity: sha512-PYU+qU6hg+h6V42z+MDnBTiWZXTTzWhIn5ieyRZYyszTru/LiJKHdsHGKe1VBfuXEuRdfRhAzivMjquZVaqO4A==}
+    peerDependencies:
+      '@metaplex-foundation/umi': ^0.8.2
+    dependencies:
+      '@metaplex-foundation/umi': 0.8.9
+    dev: false
+
+  /@metaplex-foundation/mpl-toolbox@0.9.1(@metaplex-foundation/umi@0.8.9):
+    resolution: {integrity: sha512-Jm98H997MrDfKItjA8bxfsQa+ijVVR6YmMapSd0l75+nKo6Ca0eve/tv2z4qudMS2A4HbH6NLKSW3JHkutzvkQ==}
     peerDependencies:
       '@metaplex-foundation/umi': ^0.8.2
     dependencies:
